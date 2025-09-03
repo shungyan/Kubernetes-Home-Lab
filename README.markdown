@@ -1,10 +1,10 @@
-# K3s Cluster Setup with ArgoCD and Longhorn
+# K3s Cluster Setup 
 
-This guide provides step-by-step instructions to set up a lightweight Kubernetes cluster using K3s, deploy ArgoCD for GitOps, configure an ArgoCD application to sync with a GitHub repository containing Nginx manifests, and install Longhorn for persistent storage.
+This repo provides step-by-step instructions to set up a lightweight Kubernetes cluster using K3s, deploy ArgoCD for GitOps, configure an ArgoCD application to sync with a GitHub repository different applications.
 
 ## Prerequisites
 - Two nodes (e.g., VMs or servers): one for the K3s master and one for the worker.
-- Ubuntu 20.04 or later (or a compatible Linux distribution) on both nodes.
+- Ubuntu 22.04 or later (or a compatible Linux distribution) on both nodes.
 - SSH access to both nodes.
 - `curl`, `git`, and `helm` installed on your local machine or nodes.
 - A GitHub repository with Nginx manifests (e.g., `namespace.yaml`, `deployment.yaml`, `service.yaml`) in a directory (e.g., `nginx-app/`).
