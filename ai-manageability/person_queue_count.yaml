@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: person-queue
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: person-queue-count
+  namespace: person-queue
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: person-queue-count
+  template:
+    metadata:
+      labels:
+        app: person-queue-count
+    spec:
+      hostNetwork: true
+      containers:
+      - name: person-queue-count
+        image: shungyan/person_queue_count:latest
+        env:
+        - name: DEVICE
+          value: "CPU"
+        - name: SOURCE
+          value: "rtsp://localhost:8554/cam0"
+        # Uncomment below if NPU support needed
+        # volumeMounts:
+        # - name: npu-device
+        #   mountPath: /dev/accel/accel0
+      # volumes:
+      # - name: npu-device
+      #   hostPath:
+      #     path: /dev/accel/accel0
