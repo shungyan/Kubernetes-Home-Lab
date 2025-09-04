@@ -27,7 +27,7 @@ spec:
         - name: DEVICE
           value: "CPU"
         - name: SOURCE
-          value: "rtsp://localhost:8554/cam0"
+          value: "rtsp://192.168.1.108:8554/cam0"
         # Uncomment below if NPU support needed
         # volumeMounts:
         # - name: npu-device
