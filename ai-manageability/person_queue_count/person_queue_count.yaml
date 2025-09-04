@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: person-queue
+  name: person-queue-count
 
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: person-queue-count
-  namespace: person-queue
+  namespace: person-queue-count
 spec:
   replicas: 1
   selector:
@@ -22,7 +22,7 @@ spec:
       hostNetwork: true
       containers:
       - name: person-queue-count
-        image: shungyan/person_queue_count:latest
+        image: shungyan17/person_queue_count:latest
         env:
         - name: DEVICE
           value: "CPU"
