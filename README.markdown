@@ -59,7 +59,7 @@ This repo provides step-by-step instructions to set up a lightweight Kubernetes 
 6. Open a browser and navigate to `http://localhost:8080`. Log in with username `admin` and the retrieved password.
 
 ## Step 3: Create ArgoCD Application to Sync with GitHub Repo
-1. Ensure your GitHub repository contains the Nginx manifests in the `nginx-app/` directory.
+1. Ensure your GitHub repository contains the Nginx manifests in the `nginx/` directory.
 2. Log in to the ArgoCD UI or use the ArgoCD CLI.
 3. Create an ArgoCD application manifest (`nginx-app.yaml`) or apply it directly:
    ```yaml
@@ -71,9 +71,9 @@ This repo provides step-by-step instructions to set up a lightweight Kubernetes 
    spec:
      project: default
      source:
-       repoURL: https://github.com/<YOUR_USERNAME>/<YOUR_REPO>.git
+       repoURL: https://github.com/shungyan/kubernetes-home-lab.git
        targetRevision: HEAD
-       path: nginx-app
+       path: nginx
      destination:
        server: https://kubernetes.default.svc
        namespace: nginx
