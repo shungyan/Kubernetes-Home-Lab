@@ -7,7 +7,6 @@ This repo provides step-by-step instructions to set up a lightweight Kubernetes 
 - Ubuntu 22.04 or later (or a compatible Linux distribution) on both nodes.
 - SSH access to both nodes.
 - `curl`, `git`, and `helm` installed on your local machine or nodes.
-- A GitHub repository with Nginx manifests (e.g., `namespace.yaml`, `deployment.yaml`, `service.yaml`) in a directory (e.g., `nginx-app/`).
 
 ## Step 1: Set Up K3s Cluster
 ### 1.1 Install K3s on the Master Node
