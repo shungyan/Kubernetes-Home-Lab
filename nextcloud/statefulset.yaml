@@ -22,8 +22,13 @@ spec:
         volumeMounts:
         - name: nextcloud-data
           mountPath: /var/www/html
-    volumes:
-      - name: nextcloud-data
-        persistentVolumeClaim:
-          claimName: nextcloud-data
+  volumeClaimTemplates:
+  - metadata:
+      name: nextcloud-data
+    spec:
+      accessModes: ["ReadWriteOnce"]
+      resources:
+        requests:
+          storage: 20Gi
+      storageClassName: longhorn
 
