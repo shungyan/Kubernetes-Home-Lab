@@ -22,11 +22,7 @@ spec:
         volumeMounts:
         - name: nextcloud-data
           mountPath: /var/www/html
-  volumeClaimTemplates: []
-  volumeMounts: []
-  volumeClaimTemplates: []
-  # Instead of inlining claim, we’ll mount existing PVC
-      volumes:
+    volumes:
       - name: nextcloud-data
         persistentVolumeClaim:
           claimName: nextcloud-data
